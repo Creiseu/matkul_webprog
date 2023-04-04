@@ -1,9 +1,7 @@
 <?php
         $nama_mhs = array(
-            array("Nama" => "Daud"),
-            array("Nama" => "Fero"),
-            array("Nama" => "Dzaky"),
-            array("Nama" => "Syarif")
+            array("Nama" => "Yanto"),
+            array("Nama" => "Yanti")
         );
 
         $nama   = $nama_mhs[0]["Nama"];
@@ -18,24 +16,44 @@
         $nilai_uas   = $uas * 0.4;
         $nilai_akhir = $nilai_absen + $nilai_tugas + $nilai_uts + $nilai_uas;
         
+    function nilaigue($nilai_akhir){
         if ($nilai_akhir>=80){
-            $grade = "A";
+            if($nilai_akhir>=85){
+                $grade = "A+";
+            }
+            else{
+                $grade = "A";
+            }
         }
         elseif ($nilai_akhir>=70){
-            $grade = "B";
+            if($nilai_akhir>=75){
+                $grade = "B+";
+            }
+            else{
+                $grade = "B";
+            }
         }
         elseif ($nilai_akhir>=50){
-            $grade = "C";
+            if($nilai_akhir>=55){
+                $grade = "C+";
+            }
+            else{
+                $grade = "C";
+            }
         }
         elseif ($nilai_akhir>=40){
-            $grade = "D";
+            if($nilai_akhir>=45){
+                $grade = "D+";
+            }
+            else{
+                $grade = "D";
+            }
         }
         else{
             $grade = "E";
         }
-
-        echo "Nama Mahasiswa : ".$nama;
-        echo "<br>";
+        echo $grade;
+    }
         echo "Nilai Absen : ".$nilai_absen;
         echo "<br>";
         echo "Nilai Tugas : ".$nilai_tugas;
@@ -44,7 +62,8 @@
         echo "<br>";
         echo "Nilai UAS : ".$nilai_uas;
         echo "<br>";
-        echo "Nilai Akhir : ".$grade;
+        echo "Nilai Akhir : ";
+        nilaigue($nilai_akhir);
 
 
         echo "<br>";

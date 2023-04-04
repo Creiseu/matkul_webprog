@@ -9,7 +9,6 @@
 <body>
     <form action="output.php" method="post">
         <h1>Perhitungan Nilai Akhir Mahasiswa</h1>
-        Nama Mahasiswa : <input type="text" name="nama" id="nama" ><br>
         Nilai Absen : <input type="text" name="absen" id="absen" ><br>
         Nilai Tugas : <input type="text" name="tugas" id="tugas" ><br>
         Nilai UTS : <input type="text" name="uts" id="uts" ><br>
