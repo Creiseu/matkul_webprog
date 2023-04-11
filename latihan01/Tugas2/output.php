@@ -9,7 +9,6 @@
         $tugas  = $_POST["tugas"];
         $uts    = $_POST["uts"];
         $uas    = $_POST["uas"];
-        
         $nilai_absen = $absen * 0.1;
         $nilai_tugas = $tugas * 0.2;
         $nilai_uts   = $uts * 0.3;
