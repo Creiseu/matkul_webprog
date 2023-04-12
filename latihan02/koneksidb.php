@@ -1,8 +1,15 @@
 <?php
     $servername = "localhost";
     $database = "db_blog";
-    $userdb = "root";
+    $user_db = "root";
     $pass_db = "";
 
-    mysqli_connect();
+    $koneksidb = mysqli_connect($servername, $user_db, $pass_db, $database);
+    if(!$koneksidb){
+        echo "Koneksi Gagal";
+        exit;
+    }
+    // else{
+    //     echo "Koneksi Berhasil";
+    // }
 ?>

@@ -1,3 +1,6 @@
+<?php
+    require_once("../koneksidb.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,12 +50,19 @@
             <div class="container-fluid text-center">
                 <div class="row">
                     <div class="col-sm-3">
-                        <div class="mb-2 row">Data Kategori</div>
-                        <div class="mb-2 row">Data Artikel</div>
-                        <div class="mb-2 row">Data User</div>
-                        <div class="mb-2 row">Data Menu</div>
+                        <div class="mb-2 row"><a href="?modul=mod_kategori">Blog Kategori</a></div>
+                        <div class="mb-2 row"><a href="?modul=mod_blog">Data Blog</a></div>
+                        <div class="mb-2 row"><a href="?modul=mod_user">Data User</a></div>
+                        <div class="mb-2 row"><a href="">Data Menu</a></div>
                     </div>
-                    <div class="col-sm-9">Kosong</div>
+                    <div class="col-sm-9">
+                        <?php
+                            if(isset ($_GET["modul"])){
+                                include_once("".$_GET["modul"]."/index.php");
+                            }
+                            
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
