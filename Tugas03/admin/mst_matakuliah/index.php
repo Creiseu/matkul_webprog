@@ -1,11 +1,11 @@
 <?php
-  if(!isset($_GET["aksi"])){
+  if(!isset($_GET['aksi'])){
 ?>
 <?php
   $qdata = mysqli_query($koneksidb, "select * from mst_matakuliah") 
-    or die(mysqli_error($koneksidb));
+  or die(mysqli_error($koneksidb));
 ?>
-<form action="mst_matakuliah/proses.php" method="post">
+<form action="#" method="get">
   <section class="container-fluid">
     <div class="mb-3 row" style="margin-top: 30px;">
       <div class="col-md-2"></div>
@@ -22,7 +22,6 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">No Induk Mahasiswa</th>
-                <th scope="col">Mahasiswa</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Jurusan</th>
                 <th scope="col">Kode Mata Kuliah</th>
@@ -36,12 +35,11 @@
               ?>
               <tr>
                 <td scope="row"><?php echo $row["No"] ?></td>
-                <td><?php echo $row["Nim"]?></td>
-                <td><?php echo $row["Mahasiswa"] ?></td>
+                <td><?php echo $row["NIM"]?></td>
                 <td><?php echo $row["Nama"]?></td>
                 <td><?php echo $row["Jurusan"]?></td>
-                <td><?php echo $row["KodeMK"]?></td>
-                <td><?php echo $row["NamaMK"] ?></td>
+                <td><?php echo $row["Kode_Matkul"]?></td>
+                <td><?php echo $row["Nama_Matkul"] ?></td>
                 <td><?php echo $row["Nilai"] ?></td>
                 <td>
                   <a href="" class="">Edit</a>

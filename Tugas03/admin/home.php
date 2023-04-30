@@ -19,7 +19,7 @@
                     </div>
                     <div class="col">
                         <?php
-                            if(isset ($_GET["modul"])){
+                            if(isset($_GET["modul"])){
                             include_once("".$_GET["modul"]."/index.php");
                         }?>
                     </div>
