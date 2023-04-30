@@ -1,6 +1,5 @@
 <?php
   if(!isset($_GET["aksi"])){
-
 ?>
 <?php
   $qdata = mysqli_query($koneksidb, "select * from mst_matakuliah") 
@@ -13,7 +12,7 @@
       <div class="col-md">
         <div class="mb-3">
           <div class="col-md">
-            <a href="?modul=mod_matakuliah&aksi=add" class="btn btn-primary btn-xs mb-1">Tambah Data</a>
+            <a href="?modul=mst_matakuliah&aksi=add" class="btn btn-primary btn-xs mb-1">Tambah Data</a>
           </div>          
         </div>
         <div class="mb-3 row">
@@ -64,7 +63,7 @@
 elseif (isset($_GET["aksi"])){
 ?>
 <h3>Form Input Data</h3>
-<form action="mst_kategori/proses.php?aksi=insert" method="post">
+<form action="mst_matakuliah/proses.php?aksi=insert" method="post">
   <div class="container-fluid text-center">
     <div class="row">
       <div class="col-sm-3">
