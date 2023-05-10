@@ -1,6 +1,5 @@
 <?php
   if(!isset($_GET["aksi"])){
-
 ?>
 <?php
   $qdata = mysqli_query($koneksidb, "select * from mst_kategori") 
@@ -34,8 +33,8 @@
                 <td><?php echo $row["idkategori"] ?></td>
                 <td><?php echo $row["nm_kategori"]?></td>
                 <td>
-                  <a href="" class="">Edit</a>
-                  <a href="" class="">Delete</a>
+                  <a href="?modul=mod_kategori&aksi=edit&id=<?php echo $row["idkategori"] ?>" class="">Edit</a>
+                  <a href="mod_kategori/proses.php?proses=delete&id=<?php echo $row["idkategori"];?>" class="">Delete</a>
                 </td>
               </tr>
               <?php
@@ -51,17 +50,31 @@
   </section>
 <?php } 
 elseif (isset($_GET["aksi"])){
+  if($_GET["aksi"] == "edit"){
+    $query = mysqli_query($koneksidb, "select * from mst_kategori where idkategori=".$_GET['id']."")
+             or die("Data tidak ditemukan".mysqli_error($koneksidb));
+    $data = mysqli_fetch_array($query);
+    $nama = $data['nm_kategori'];
+    $exproses = "update";
+    $idnya = $_GET['id'];
+  }
+  elseif($_GET["aksi"] == "add"){
+    $exproses = "insert";
+    $nama = "";
+    $idnya = 0;
+  }
 ?>
 </form>
     <h3>Form Input Data</h3>
-    <form action="mod_kategori/proses.php?aksi=insert" method="post">
+    <form action="mod_kategori/proses.php?proses=<?php echo $exproses;?>" method="post">
     <div class="container-fluid text-center">
         <div class="row">
             <div class="col-sm-3">
                 <p>Nama Kategori</p>
             </div>
             <div class="col-sm-9">
-                <input type="text" name="txt_nama" id="txt_nama">
+              <input type="hidden" name="txt_id" id="txt_id" value="<?php echo $idnya;?>">
+              <input type="text" name="txt_nama" id="txt_nama" value=<?php echo $nama;?>>
             </div>
         </div>
         <div class="row">
