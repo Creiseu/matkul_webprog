@@ -1,11 +1,12 @@
 <?php
-if(!isset($_GET['aksi'])){
+if(!isset($_GET['aksi'])){/////kode isset untuk melakukan pengecekan jika tidak ditemukan variabel aksi yg dikirim melalui url 
 ?>
 <?php
   $qdata = mysqli_query($koneksidb, "SELECT a.*, nm_kategori FROM mst_blog 
   AS a INNER JOIN mst_kategori AS b ON a.id_kategori = b.idkategori ") 
     or die(mysqli_error($koneksidb));
 ?>
+<!-- `quert sql untuk mengambil data dari tabel database berupa data dari array-->
   <section class="container-fluid">
     <div class="mb-3 row" style="margin-top: 30px;">
       <div class="col-md-11">
