@@ -118,7 +118,7 @@
             </div>
             <p>
             <?= substr_replace($row["isi_blog"], "...", 100); ?>
-            [<a href="detailblog.php?=id<?php echo $row["idblog"]?>">Baca Selengkapnya</a>]
+            [<a href="detailblog.php?id=<?php echo $row["idblog"]?>">Baca Selengkapnya</a>]
             </p>
             <hr />
           </div>
