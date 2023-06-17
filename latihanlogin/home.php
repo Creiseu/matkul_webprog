@@ -1,8 +1,8 @@
 <?php
 require_once("koneksi_db.php");
 session_start();
-// require_once("config.php");
-// securitylogin();
+require_once("config.php");
+securitylogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
