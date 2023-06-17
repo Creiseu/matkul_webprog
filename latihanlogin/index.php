@@ -1,5 +1,5 @@
 <?php
-require_once("koneksidb.php");
+require_once("koneksi_db.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
