@@ -15,7 +15,7 @@
         $query_simpan = mysqli_query($koneksi_db, "INSERT INTO mst_user (username,password,is_active,nama)
         values('".$txtuser."','".$txtpass."',1,'".$txtnama."')");
         if($query_simpan){
-            echo "Data Tersimpan!";
+            header("Location: http://localhost/matkul_webprog/latihanlogin/home.php?modul=mod_user ");
         }else{
             echo "Gagal tersimpan";
         }

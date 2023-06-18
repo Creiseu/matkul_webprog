@@ -6,7 +6,7 @@ $passnya = md5($_POST["txt_pasw"]);
     echo $usernya."<br>";
     echo $passnya."<br>";
         $query_login = mysqli_query($koneksi_db, "SELECT * FROM mst_user where password='".$passnya."' 
-        AND BINARY username='".$usernya."' ");
+        AND BINARY username='".$usernya."' AND is_active= 1 ");
         $cekhasil = mysqli_num_rows($query_login); //jumlah data yang ditemukan
         $hasil = mysqli_fetch_array($query_login); //variabel yang menampung hasil query
         // echo $cekhasil;

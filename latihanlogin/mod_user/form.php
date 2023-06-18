@@ -38,21 +38,23 @@
         </div>
     </form>
 </div>
+
+
+
+
 <?php } 
      if($_GET["aksi"] == "ubah"){
         $usernya = $_GET['user'];
         $query_getdata = mysqli_query($koneksi_db,
         "SELECT * FROM mst_user WHERE username='".$usernya."'");
         $data = mysqli_fetch_array($query_getdata);
-
-
 ?>
 <div class="container">
     <h3>Input Data</h3>
     <form action="mod_user/proses_add.php" method="post">
         <div class="col">
             <label for="txt_nama">Nama</label>
-            <input type="text" name="txt_nama" id="txt_nama"
+            <input type="text" name="txt_nama" id="txt_nama" readonly
             oninvalid="this.setCustomValidity('Username Wajib Diisi')"
             required="true"
             oninput="setCustomValidity('')" value="<?php echo $data["nama"] ?>"/>
@@ -66,10 +68,8 @@
         </div>
         <div class="col">
             <label for="txt_pasw"> Ganti Password</label>
-             <input type="hidden" name="pass_lama" value="<?php echo $data["password"]?>" >
-            <input type="password" name="txt_pasw" id="txt_pasw" 
-            
-            />
+             <input type="hidden" name="pass_lama" >
+            <input type="password" name="txt_pasw" id="txt_pasw"/>
         </div>
         <div class="col">
             <label for="txt_pasw2"> Ulangi Password</label>
@@ -83,4 +83,6 @@
 </div>
 <?php
     }
+
+    
 ?>
