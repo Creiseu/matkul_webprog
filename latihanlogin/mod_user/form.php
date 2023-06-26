@@ -4,7 +4,7 @@
 
 <div class="container">
     <h3>Input Data</h3>
-    <form action="mod_user/proses_add.php" method="post">
+    <form action="mod_user/proses_add.php" method="POST">
         <div class="col">
             <label for="txt_nama">Nama</label>
             <input type="text" name="txt_nama" id="txt_nama"
@@ -51,7 +51,7 @@
 ?>
 <div class="container">
     <h3>Input Data</h3>
-    <form action="mod_user/proses_add.php" method="post">
+    <form action="mod_user/proses_add.php" method="POST">
         <div class="col">
             <label for="txt_nama">Nama</label>
             <input type="text" name="txt_nama" id="txt_nama" readonly

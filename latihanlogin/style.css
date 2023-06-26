@@ -28,10 +28,10 @@ label, input{
     text-decoration: none;
 }
 .col-md{
-    width: 100px;
+    width: 100%;
     padding: 5px;
 }
- button{
+button{
     font-size: 14px;
     padding: 7px;
     display: block;

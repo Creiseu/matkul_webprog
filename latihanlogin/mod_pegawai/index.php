@@ -29,25 +29,27 @@ if(!isset($_GET['aksi'])){
             </tr>
             <?php
                 $no = 1;
+                // $id= mysqli_query($koneksi_db, "SELECT * FROM mst_pegawai WHERE id_pegawai = 1") 
+                // or die(mysqli_error($koneksi_db));
                 while ($row = mysqli_fetch_array($qdata)) {
                 $tanggal = $row["tgl_masuk"];
                 $tanggalbaru = date('d-m-Y', strtotime($tanggal));
             ?>
             <tr>
-                <td><?php echo $no++; ?></td>
+                <td><?php echo $no++ ?></td>
                 <td><?php echo $row["nama_peg"]; ?></td>
                 <td><?php echo $row["jk"]; ?></td>
                 <td><?php echo $row["nama_divisi"].', '.$row["jabatan"]; ?></td>
                 <td><?php echo $row["status"]; ?></td>
                 <td><?php echo $tanggalbaru; ?></td>
-            <td>
-                <a href="">Ubah</a>
-                <a href="">Hapus</a>
-        </td>
-    </tr>
-<?php
-}
-?>
+                <td>
+                    <a href="?modul=mod_pegawai&aksi=ubah&user=<?= $row["idpegawai"]?>">Ubah</a>
+                    <a href="mod_user/proses_delete.php?aksi=delete&user=<?= $row["idpegawai"]?>">Hapus</a>
+                </td>
+            </tr>
+        <?php
+        }
+    ?>
 
         </table>
     </div>
