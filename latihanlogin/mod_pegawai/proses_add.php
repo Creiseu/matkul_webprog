@@ -1,6 +1,5 @@
 <?php
     require_once("../koneksi_db.php");
-    $id = $_POST['idpegawai'];
     $nama = $_POST['txt_nama'];
     $divisi = $_POST['tx_divisi'];
     $jabatan = $_POST['tx_jabatan'];
@@ -19,6 +18,7 @@
         $status = "tetap";           ////value checkbox
     }
     echo $jk;                                ////value checkbox
+                            ////value checkbox
 
     $file = $_FILES["tx_file"];
     var_dump($file);
@@ -49,6 +49,15 @@
     //    }
     // }
 
+    if($boleh_upload == 1){
+       if(move_uploaded_file($file['tmp_name'], $target_file)){
+        notif("kelassss");
+        $ceknamafile = $file['name'];
+       }else{
+        notif("gagal upload");
+       }
+    }
+
     function notif($pesan){
         echo '<script languange="javascript">';
         echo 'alert("'.$pesan.'")';
@@ -76,4 +85,8 @@
         echo "Gagal tersimpan";
     }
 }
+        echo '<meta http-equiv="refresh" content="0;url=
+        http://localhost/matkul_webprog/latihanlogin/home.php?modul=mod_pegawai&aksi=tambah">';
+    
+
 ?>
