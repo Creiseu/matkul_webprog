@@ -25,6 +25,8 @@ if(!isset($_GET['aksi'])){
                 <th>Divisi Jabatan</th>
                 <th>Status</th>
                 <th>Tanggal Masuk</th>
+                <th>Alamat</th>
+                <th>Foto</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -42,6 +44,8 @@ if(!isset($_GET['aksi'])){
                 <td><?php echo $row["nama_divisi"].', '.$row["jabatan"]; ?></td>
                 <td><?php echo $row["status"]; ?></td>
                 <td><?php echo $tanggalbaru; ?></td>
+                <td><?php echo $row["alamat"];?></td>
+                <td><img src="filephoto/<?= $row['foto']?>" width="100px" height="100px" alt=""></td>
                 <td>
                     <a href="?modul=mod_pegawai&aksi=ubah&user=<?= $row["idpegawai"]?>">Ubah</a>
                     <a href="mod_user/proses_delete.php?aksi=delete&user=<?= $row["idpegawai"]?>">Hapus</a>

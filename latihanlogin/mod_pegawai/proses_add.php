@@ -77,7 +77,7 @@
     (nama_peg, jk, divisi, jabatan, tgl_masuk, status, alamat, foto)
     VALUES
     ('".$nama."','".$jk."','".$divisi."','".$jabatan."','".$tgl."',
-    '".$status."','".$alamat."','".$file."')");
+    '".$status."','".$alamat."','". $ceknamafile."')");
 
     if($query_simpan){
         header("Location: http://localhost/matkul_webprog/latihanlogin/home.php?modul=mod_pegawai ");
