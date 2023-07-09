@@ -46,7 +46,7 @@
             <div class="col-md">
                 <label for="status">Status Pegawai</label>
                 <input type="checkbox" name="st_kontrak" value="kontrak"><label>Kontrak</label>
-                <input type="checkbox" name="st_tetap" value="tetap"><label>Tetap</label>
+                <input type="checkbox" name="st_tetap" value="Tetap"><label>Tetap</label>
             </div>
             <div class="col-md">
                 <label for="tx_tgl">Tanggal Bergabung</label>
@@ -61,7 +61,7 @@
                 <input type="file" name="tx_file" id="tx_file">
             </div>
             <div class="col-md">
-                <button class>Simpan Data</button>
+                <input type="submit" class="btn" name="upload" value="Simpan Data">
             </div>
         </form>
     </div>
@@ -88,12 +88,16 @@
             <div class="col-md">
                 <label for="op_jk">Jenis Kelamin</label>
                 <?php
+                    // $jk;
+                    // if($data["jk"] == "Pria"){
+                    //     echo "checked";
+                    // }
                     $jk = $data['jk'];
                     $cek_lk = "";
                     $cek_wn = "";
                     if($jk == "Pria" ){ $cek_lk ="checked";}
-                    if($jk == "Wanita" ){ $cek_wn ="checked";}
-                    ?>
+                    elseif($jk == "Wanita" ){ $cek_wn ="checked";}
+                ?>
                     <input type="radio" name="op_jk" value="Pria" <?php echo $cek_lk?>> Pria
                     <input type="radio" name="op_jk" value="Wanita" <?php echo $cek_wn?>> Wanita
             </div>
@@ -122,8 +126,8 @@
                 $status = $data['status'];
                 $cek_kontrak = "";
                 $cek_tetap = "";
-                if($jk == "Kontrak" ){ $cek_kontrak = "checked";}
-                if($jk == "Tetap" ){ $cek_tetap ="checked";}
+                if($status == "Kontrak" ){ $cek_kontrak = "checked";}
+                if($status == "Tetap" ){ $cek_tetap ="checked";}
                 ?>
                 <input type="checkbox" name="st_kontrak" value="Kontrak" <?php echo $cek_kontrak ?>> Kontrak
                 <input type="checkbox" name="st_tetap" value="Tetap" <?php echo $cek_tetap ?>>Tetap
@@ -144,7 +148,7 @@
                 <input type="file" name="tx_file" id="tx_file">
             </div>
             <div class="col-md">
-                <button class>Simpan Data</button>
+                <input type="submit" class="btn" name="upload" value="Simpan Data">
             </div>
         </form>
     </div>

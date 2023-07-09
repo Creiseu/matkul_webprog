@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<style>
+.form-group {
+  margin-bottom: 20px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: black;
+}
+.registration-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="gender"]{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #363636;
+  color: #ffffff;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00ffcc;
+  color: #000000;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #00e6b8;
+}
+.jk{
+    width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444444;
+  color: #ffffff;
+}
+.jenisk{
+  color: white;
+}
+</style>
+  <div class="container">
+    <form class="registration-form">
+      <h1>Registrasi Klinik</h1>
+      <div class="form-group">
+        <label for="name">Nama lengkap:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="number">No Telp:</label>
+        <input type="number" id="number" name="number" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Tempat lahir:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Tanggal Lahir:</label>
+        <input type="date" id="name" name="name" required>
+      </div>
+      <div class="form-group jk">
+        <label for="gender" class="jenisk" >Jenis Kelamin:</label>
+        <select id="gender" type="gender" name="gender" required>
+          <option value="">Pilih Jenis Kelamin</option>
+          <option value="male">Laki-laki</option>
+          <option value="female">Perempuan</option>
+          <option value="other">Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Daftar">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

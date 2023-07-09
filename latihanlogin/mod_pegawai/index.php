@@ -1,4 +1,5 @@
 <?php
+// require_once("../koneksi_db.php");
 if(!isset($_GET['aksi'])){ 
 ?>
 <?php
@@ -17,7 +18,7 @@ if(!isset($_GET['aksi'])){
     <div class="container">
         <h1>Data Pegawai</h1>
         <a href="?modul=mod_pegawai&aksi=tambah">Tambah Data</a>
-        <table border="1" cellpadding="7" >
+        <table border="1" cellpadding="5" >
             <tr>
                 <th>No</th>
                 <th>Nama Pegawai</th>
@@ -45,7 +46,7 @@ if(!isset($_GET['aksi'])){
                 <td><?php echo $row["status"]; ?></td>
                 <td><?php echo $tanggalbaru; ?></td>
                 <td><?php echo $row["alamat"];?></td>
-                <td><img src="filephoto/<?= $row['foto']?>" width="100px" height="100px" alt=""></td>
+                <td><img src="filephoto/<?= $row['foto']?>" width="100px" height="" alt=""></td>
                 <td>
                     <a href="?modul=mod_pegawai&aksi=ubah&user=<?= $row["idpegawai"]?>">Ubah</a>
                     <a href="mod_user/proses_delete.php?aksi=delete&user=<?= $row["idpegawai"]?>">Hapus</a>
