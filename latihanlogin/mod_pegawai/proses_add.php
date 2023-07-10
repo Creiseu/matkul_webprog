@@ -29,25 +29,38 @@
     
     if(isset($_POST["upload"])){
         $file = $_FILES["tx_file"]; //bentuk file yang telah dipilih dan akan diupload
+        $target_folder = "../filephoto/"; //target folder akan disimpan kemana ketika file diupload
+        $target_file = $target_folder.$file['name'];
+        $type_file =  strtolower(pathinfo($file['name'],PATHINFO_EXTENSION));
         $namafile = $_FILES["tx_file"]["name"]; //hanya mengambil nama dari file
-        $ukuran = $_FILES["tx_file"]["size"]; //hanya mengambil ukuran/size dari file 
-        $target_upload = "../filephoto/"; //target folder akan disimpan kemana ketika file diupload
-        $boleh_upload = true;
-    
-        if($ukuran < 5000000){
-            $boleh_upload = false;
-            notif("Jangan Upload, File terlalu kecil");
+        $boleh_upload = 1;
+        /* cek batas limit file maks.3MB*/
+        if($type_file != "jpg" && $type_file != "png" && $type_file != "jpeg"){
+            $boleh_upload = 0;
+            notif("Tipe File anda berbahaya!!");
+            die;
+        }elseif($file['size'] > 1000000){
+            $boleh_upload = 0;
+            notif("Minimal Ukuran File nya 1MB");
+            die;
+        }elseif($boleh_upload == 1){
+            //if ini melakukan proses upload dan sekaligus melakukan pengecekkan upload berhasil
+            if(move_uploaded_file($file['tmp_name'],$target_file)){
+                notif("File sudah di upload");
+                $ceknamafile = $file['name'];
+                //proses insert
+            }
+            else{
+                notif("Gagal upload File");
+                die;
+            }	
         }
-    
-        $extension = strtolower(pathinfo($namafile, PATHINFO_EXTENSION));
-        if($extension == 'pdf'){
-            $boleh_upload = false;
-            notif("Jangan Upload, Hanya file PDF yang tidak diperbolehkan.");
-        }
-    
-        if($boleh_upload){
-            move_uploaded_file($_FILES["tx_file"]["tmp_name"], $target_upload.$namafile);
-        }
+        
+        /**cek tipe file yang boleh diupload : jpg, png, jpeg*/
+        
+        //proses upload memindah file dari local ke server
+        $ceknamafile = ""; //variabel ini yang akan disimpan ke tabel
+        
     }
     
 

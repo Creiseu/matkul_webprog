@@ -123,14 +123,14 @@
             <div class="col-md">
                 <label for="status">Status Pegawai</label>
                 <?php
-                $status = $data['status'];
-                $cek_kontrak = "";
-                $cek_tetap = "";
-                if($status == "Kontrak" ){ $cek_kontrak = "checked";}
-                if($status == "Tetap" ){ $cek_tetap ="checked";}
+                    $status = $data['status'];
+                    $cek_kontrak = "";
+                    $cek_tetap = "";
+                    if($status == "kontrak" ){ $cek_kontrak ="checked";}
+                    elseif($status == "tetap" ){ $cek_tetap ="checked";}
                 ?>
-                <input type="checkbox" name="st_kontrak" value="Kontrak" <?php echo $cek_kontrak ?>> Kontrak
-                <input type="checkbox" name="st_tetap" value="Tetap" <?php echo $cek_tetap ?>>Tetap
+                <input type="checkbox" name="st_kontrak" value="tontrak" <?php echo $cek_kontrak ?>> kontrak
+                <input type="checkbox" name="st_tetap" value="tetap" <?php echo $cek_tetap ?>>tetap
             </div>
             <div class="col-md">
                 <label for="tx_tgl">Tanggal Bergabung</label>

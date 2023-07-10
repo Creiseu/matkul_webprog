@@ -14,9 +14,9 @@
         $jk = "";             ////value radio button
     }                         ////value radio button
     if(isset($_POST['st_kontrak'])){ ////value checkbox
-        $status = "kontrak";         ////value checkbox
+        $status = "Kontrak";         ////value checkbox
     }if(isset($_POST['st_tetap'])){    ////value checkbox
-        $status = "tetap";           ////value checkbox
+        $status = "Tetap";           ////value checkbox
     }
     $file = $_FILES["tx_file"];
     $filelama = $_POST['filelama'];
