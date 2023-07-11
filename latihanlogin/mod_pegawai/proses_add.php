@@ -38,7 +38,6 @@
         if($type_file != "jpg" && $type_file != "png" && $type_file != "jpeg"){
             $boleh_upload = 0;
             notif("Tipe File anda berbahaya!!");
-            die;
         }elseif($file['size'] > 1000000){
             $boleh_upload = 0;
             notif("Minimal Ukuran File nya 1MB");

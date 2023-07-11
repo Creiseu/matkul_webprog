@@ -134,7 +134,7 @@
             </div>
             <div class="col-md">
                 <label for="tx_tgl">Tanggal Bergabung</label>
-                <input type="date" name="tx_tgl" id="tx_tgl">
+                <input type="date" name="tx_tgl" id="tx_tgl" value=<?php echo $data['tgl_masuk'] ?> >
             </div>
             <div class="col-md">
                 <label for="tx_alamat">Alamat</label>
@@ -143,7 +143,7 @@
             <div class="col-md">
                 <img src="filephoto/<?= $data['foto']?>" width="100px" height="100px" alt="">
                 <img src="filephoto" alt="">
-                <input type="hidden" name="filelama" value="<?php $data['foto']; ?>">
+                <input type="hidden" name="filelama" value="<?php echo $data['foto']; ?>">
                 <label for="tx_file">Upload Foto</label>
                 <input type="file" name="tx_file" id="tx_file">
             </div>

@@ -49,7 +49,7 @@ if(!isset($_GET['aksi'])){
                 <td><img src="filephoto/<?= $row['foto']?>" width="100px" height="" alt=""></td>
                 <td>
                     <a href="?modul=mod_pegawai&aksi=ubah&user=<?= $row["idpegawai"]?>">Ubah</a>
-                    <a href="mod_user/proses_delete.php?aksi=delete&user=<?= $row["idpegawai"]?>">Hapus</a>
+                    <a href="mod_pegawai/proses_delete.php?aksi=delete&user=<?= $row["idpegawai"]?>">Hapus</a>
                 </td>
             </tr>
         <?php
